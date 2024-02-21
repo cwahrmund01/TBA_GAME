@@ -1,13 +1,15 @@
 class Item():
-    def __init__(self, name):
+    def __init__(self, name, is_one_time_use=False):
         self.name = name
+        self.is_one_time_use = is_one_time_use
 
+    def __str__(self):
+        return self.name
 
 class Weapon(Item):
-    def __init__(self, name, damage, is_one_time_hit=False):
-        super().__init__(name)
+    def __init__(self, name, damage, is_one_time_use=False):
+        super().__init__(name, is_one_time_use)
         self.damage = damage
-        self.is_one_time_hit = is_one_time_hit
 
 class Waterskin(Item):
     def __init__(self, name="waterskin", is_full=True):
@@ -20,4 +22,7 @@ class Lantern(Item):
         self.rounds_of_fuel = rounds_of_fuel
     
     def __str__(self):
-        print(f"Your lantern will burn for {self.rounds_of_fuel} more moves.")
+        return f"Your lantern will burn for {self.rounds_of_fuel} more moves."
+    
+    def is_empty(self):
+        return self.rounds_of_fuel <= 0
