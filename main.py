@@ -1,5 +1,5 @@
 import player
-STARTING_INVENTORY = player.Inventory("waterskin", "knife", "bedroll", "torch")
+STARTING_INVENTORY = player.Inventory("waterskin", "knife", "bedroll", "lantern")
 
 def main():
     print("Welcome to <title of game here>!")

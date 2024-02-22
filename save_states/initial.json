@@ -1,0 +1,46 @@
+{
+    "player": {
+        "name": "none",
+        "health": "5",
+        "inventory": {
+            "0":{
+                "type": "Waterskin",
+                "name": "waterskin",
+                "one_time": "false",
+                "type_specific": {
+                    "is_full": "true"
+                }
+            },
+            "1": {
+                "type": "Weapon",
+                "name": "knife",
+                "one_time": "false",
+                "type_specific": {
+                    "damage": "1"
+                }
+            },
+            "2": {
+                "type": "Item",
+                "name": "bedroll",
+                "one_time": "false",
+                "type_specific": {
+
+                }
+            },
+            "3": {
+                "type": "Lantern",
+                "name": "lantern",
+                "one_time": "false",
+                "type_specific": {
+                    "fuel": 100
+                }
+            }
+        }
+    },
+    "rooms": {
+
+    },
+    "npcs": {
+
+    }
+}
