@@ -9,6 +9,9 @@ class Inventory():
     def __str__(self):
         pass
 
+    def sort_contents():
+        pass
+
     def get_number_items(self):
         return len(self.contents)
     

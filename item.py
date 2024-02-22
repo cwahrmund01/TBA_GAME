@@ -5,6 +5,21 @@ class Item():
 
     def __str__(self):
         return self.name
+    
+    def __lt__(self, other):
+        return self.name < other.name
+
+    def __gt__(self, other):
+        return self.name > other.name
+
+    def __le__(self, other):
+        return self.name <= other.name
+
+    def __ge__(self, other):
+        return self.name >= other.name
+
+    def __eq__(self, other):
+        return self.name == other.name
 
 class Weapon(Item):
     def __init__(self, name, damage, is_one_time_use=False):
