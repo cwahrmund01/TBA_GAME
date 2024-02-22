@@ -1,3 +1,4 @@
+import item
 
 class Player():
     def __init__(self, name, inventory):
@@ -20,3 +21,9 @@ class Inventory():
         self.capacity = 10
         self.has_pack = False
 
+
+def inventory_from_json(json_inventory):
+    pass
+
+def player_from_json(json_player):
+    pass

@@ -26,3 +26,7 @@ class Lantern(Item):
     
     def is_empty(self):
         return self.rounds_of_fuel <= 0
+    
+
+def item_from_json(json_item):
+    pass
