@@ -20,14 +20,6 @@
                 }
             },
             "2": {
-                "type": "Item",
-                "name": "bedroll",
-                "one_time": "false",
-                "type_specific": {
-
-                }
-            },
-            "3": {
                 "type": "Lantern",
                 "name": "lantern",
                 "one_time": "false",
