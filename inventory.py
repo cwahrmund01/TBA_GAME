@@ -2,15 +2,19 @@ import item
 
 class Inventory():
     def __init__(self, *argv):
-        self.contents = argv
+        self.contents = list(argv)
 
-        self.capacity = 10
+        self.capacity = 12
     
     def __str__(self):
-        pass
+        number_of_items = self.get_number_items()
+        out_string = f"Inventory Contents ({number_of_items}/{self.capacity}): \n"
+        for itm in self.contents:
+            out_string += f"{str(itm)}\n"
+        return out_string
 
-    def sort_contents():
-        pass
+    def sort_contents(self):
+        self.contents = sorted(self.contents)
 
     def get_number_items(self):
         return len(self.contents)
@@ -41,7 +45,17 @@ class Inventory():
         self.contents.pop(index)
 
     def add_item(self, item):
-        self.contents.append(item)
+        if self.inventory_is_full():
+            return False
+        else:
+            self.contents.append(item)
+            self.sort_contents()
+            return True
 
 def inventory_from_json(json_inventory):
-    pass
+    inv = Inventory()
+    for _, json_item in json_inventory.items():
+        new_item = item.item_from_json(json_item)
+        inv.add_item(new_item)
+
+    return inv

@@ -4,7 +4,7 @@ import json
 import os
 
 class Player():
-    def __init__(self, name, inventory):
+    def __init__(self, name, health, inventory):
         self.name = name
         self.inventory = inventory
 
@@ -27,3 +27,6 @@ def player_from_json(json_player):
         name = json_player["name"]
         health = json_player["health"]
         json_inventory = json_player["inventory"]
+        inv = inventory.inventory_from_json(json_inventory)
+
+        return Player(name, health, inv)

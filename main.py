@@ -7,7 +7,12 @@ def main():
     # player_obj = player.Player(name, STARTING_INVENTORY)
     # print(player_obj)
 
-    player.player_from_json(1)
+    p1 = player.player_from_json(1)
+
+    print(p1.name)
+    print(p1.inventory)
+    p1.inventory.sort_contents()
+    print(p1.inventory)
 
 if __name__ == "__main__":
     main()
