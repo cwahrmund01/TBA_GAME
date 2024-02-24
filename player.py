@@ -1,7 +1,6 @@
 import item
 import inventory
 import json
-import os
 
 class Player():
     def __init__(self, name, health, inventory):
@@ -20,7 +19,6 @@ class Player():
 
 
 def player_from_json(json_player):
-    print(os.getcwd())
     with open("./save_states/initial.json") as f:
         data = json.load(f)
         json_player = data["player"]
