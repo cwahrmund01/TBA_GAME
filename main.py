@@ -1,5 +1,18 @@
 import player
-#STARTING_INVENTORY = player.inventory("waterskin", "knife", "lantern")
+import json
+
+PLAYER = None
+MAP = None
+NPCS = None
+
+def import_initial_game_state():
+    with open("./save_states/initial.json", "r") as init_file:
+        game_data = json.load(init_file)
+        json_player = game_data["player"]
+        json_rooms = game_data["rooms"]
+        json_npcs = game_data["npcs"]
+
+        PLAYER = player.player_from_json(json_player)
 
 def main():
     # print("Welcome to <title of game here>!")

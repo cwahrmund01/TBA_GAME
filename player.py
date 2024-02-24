@@ -18,7 +18,7 @@ class Player():
 
 
 
-def player_from_json(json_player):
+def player_from_json(json_player, name=None):
     with open("./save_states/initial.json") as f:
         data = json.load(f)
         json_player = data["player"]
