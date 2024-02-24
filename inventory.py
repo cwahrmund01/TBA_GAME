@@ -27,14 +27,14 @@ class Inventory():
             if self.contents[i].name == item_name:
                 return self.contents[i]
         
-        return None
+        return False
 
     def get_item_index_by_name(self, name):
         for i in range(self.get_number_items()):
             if self.contents[i].name == name:
                 return i
         
-        return None
+        return False
 
     def remove_item(self, item):
         index = self.get_item_index_by_name(item.name)
