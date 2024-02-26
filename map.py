@@ -1,3 +1,5 @@
+from inventory import Inventory
+
 class Map():
 
     def __init__(self):
@@ -13,7 +15,8 @@ class Room():
         self.south = south
         self.east = east
         self.west = west
-        self.contents = contents
+        self.contents = Inventory(contents)
+        self.contents.capacity = 6
         self.npcs = npcs
     
 
@@ -95,6 +98,12 @@ class Room():
             print(f"West is type {type(self.west)}")
             print("Code is saying it is not None, a Room, or a Door")
             return -1
+        
+    def remove_item_from_room_by_name(self, item_name):
+        self.contents.remove_item_by_name(item_name)
+    
+    def add_item_to_room(self, item):
+        self.contents.add_item(item)
 
 
 class Door():
