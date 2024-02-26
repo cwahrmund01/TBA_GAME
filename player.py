@@ -30,6 +30,9 @@ class Player():
     def move_west(self):
         pass
 
+    def check_inventory(self):
+        pass
+
     def pickup_item(self, item):
         pass
     
