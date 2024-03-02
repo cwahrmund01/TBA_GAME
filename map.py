@@ -1,4 +1,4 @@
-from inventory import Inventory
+from inventory import Inventory, Room_Contents
 
 class Map():
 
@@ -15,10 +15,15 @@ class Room():
         self.south = south
         self.east = east
         self.west = west
-        self.contents = Inventory(contents)
+        self.contents = Room_Contents(contents)
         self.contents.capacity = 6
         self.npcs = npcs
     
+    def __str__(self):
+        out = f"You are currently in {self.name}. You see: \n"
+        out += self.description
+        out += "\nIn the room you see: \n"
+        out += str(self.contents)
 
     '''
     Room.get_<direction>_status methods:

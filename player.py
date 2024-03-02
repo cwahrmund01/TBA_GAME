@@ -12,10 +12,8 @@ class Player():
         self.max_health = 5
 
     def __str__(self):
-        out = f"\nHello, {self.name}, you currently have {self.health} hit points. Currently, you are carrying: "
-        for item in self.inventory.contents:
-            out += "\n" + item
-        out += "\n"
+        out = f"\nHello, {self.name}, you currently have {self.health} hit points.\n"
+        out += str(self.inventory)
         return out
     
     def move_north(self):
@@ -47,6 +45,9 @@ class Player():
 
     def look(self):
         pass
+
+    def check_self(self):
+        print(str(self))
 
     def try_key(self, key):
         pass

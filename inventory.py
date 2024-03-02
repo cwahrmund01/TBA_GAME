@@ -52,6 +52,18 @@ class Inventory():
             self.sort_contents()
             return True
 
+class Room_Contents(Inventory):
+    
+    def __init__(self, *argv):
+        super().__init__(*argv)
+    
+    def __str__(self):
+        out_string = ""
+        for itm in self.contents:
+            out_string += f"{str(itm)}\n"
+        return out_string
+        
+
 def inventory_from_json(json_inventory):
     inv = Inventory()
     for _, json_item in json_inventory.items():
